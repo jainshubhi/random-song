@@ -4,6 +4,7 @@ import random
 
 from flask import Flask
 from flask import render_template
+from flask import url_for
 from flask.ext.sqlalchemy import SQLAlchemy
 
 
@@ -19,6 +20,10 @@ from models import Emotion
 def random_song():
     song = random.choice(spotify.get_random_songs())
     return render_template('random.html', song=song)
+
+@app.route('/')
+def visualize():
+    return 'Visualize Spotify Emotions'
 
 @app.route('/<emotion>')
 def emotion_song(emotion):

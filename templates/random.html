@@ -1,14 +1,19 @@
-Hello Duniya!
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href='{{ url_for("static", filename="css/style.css") }}' rel='stylesheet' type='text/css'>
+    <title>Spotify Songs</title>
+  </head>
+  <body>
+    <!-- <iframe src="https://embed.spotify.com/?uri={{ song.uri }}&view=coverart" width="300px" height="380px" frameborder="0" allowtransparency="true"></iframe> -->
 
-Here's a random song for you.
+    Here's a random song for you! {{ song.name }} by {{ song.artist }}. <br>
 
-<iframe src="https://embed.spotify.com/?uri={{ song.uri }}&view=coverart" width="90%" height="60%" frameborder="0" allowtransparency="true"></iframe>
+    <a href="{{ song.uri }}">Here's</a> the link to the song. <br>
 
-<!--
-The random song of the day is {{ song.name }} by {{ song.artist }}.
+    And, here's an image of the album cover. <br>
 
-<a href="{{ song.uri }}">Here's</a> the link to the song.
-
-And, here's an image of the album cover.
-
-<img src="{{ song.image }}"> -->
+    <img src="{{ song.image }}">
+  </body>
+</html>
