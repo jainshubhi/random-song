@@ -1,6 +1,8 @@
 import os
+import requests
 
 from flask import Flask
+from flask import render_template
 from flask.ext.sqlalchemy import SQLAlchemy
 
 
@@ -14,7 +16,8 @@ from models import Emotion
 ################################### ROUTES #####################################
 @app.route('/random')
 def random():
-    return "Hello World!"
+    r = requests.get('http://randomword.setgetgo.com/get.php')
+    return render_template('random.html', random_word=r.text)
 
 
 @app.route('/<emotion>')

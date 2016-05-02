@@ -14,3 +14,4 @@ requests==2.10.0
 spotipy==2.3.8
 SQLAlchemy==1.0.12
 Werkzeug==0.11.9
+wordnik==2.1.3
