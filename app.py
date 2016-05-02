@@ -19,7 +19,7 @@ def random():
 
 @app.route('/<emotion>')
 def emotion(emotion):
-    return "Hello {}!".format(name)
+    return "Hello {}!".format(emotion)
 
 #################################### RUN #######################################
 if __name__ == '__main__':
