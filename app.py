@@ -1,6 +1,6 @@
 import os
-import requests
-import words
+import spotify
+import random
 
 from flask import Flask
 from flask import render_template
@@ -16,12 +16,12 @@ db = SQLAlchemy(app)
 from models import Emotion
 ################################### ROUTES #####################################
 @app.route('/random')
-def random():
-    return render_template('random.html', random_word=words.get_random_word())
-
+def random_song():
+    song = random.choice(spotify.get_random_songs())
+    return render_template('random.html', song=song)
 
 @app.route('/<emotion>')
-def emotion(emotion):
+def emotion_song(emotion):
     return "Hello {}!".format(emotion)
 
 #################################### RUN #######################################

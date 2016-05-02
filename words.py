@@ -16,4 +16,12 @@ def get_random_word():
     Return random word based on Wordnik API
     '''
     words_api = WordsApi.WordsApi(client)
-    return words_api.getRandomWord().word
+    word = words_api.getRandomWord()
+    # If a more condensed form of word exists, return that instead
+    if word.canonicalForm:
+        print 'Printed Canonical Form of Word'
+        return word.canonicalForm
+    elif word.originalWord:
+        print 'Printed Original Form of Word'
+        return originalWord
+    return word.word
