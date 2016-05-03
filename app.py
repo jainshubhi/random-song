@@ -23,7 +23,7 @@ def random_song():
 
 @app.route('/')
 def visualize():
-    return 'Visualize Spotify Emotions'
+    return render_template('index.html')
 
 @app.route('/<emotion>')
 def emotion_song(emotion):

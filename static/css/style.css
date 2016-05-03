@@ -1,6 +1,16 @@
+/* Define Proxima Nova Font */
+@font-face {
+    font-family: "Proxima Nova";
+    src: url(fonts/Monterrat-Light.otf);
+}
+
 body {
-  font-family: "Open Sans", Arial;
+  font-family: "Proxima Nova", "Open Sans", Arial;
   background-color: #181818;
+}
+
+h1 {
+  color: white;
 }
 
 ul {
@@ -8,7 +18,7 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    background-color: #282828;
 }
 
 li {
@@ -23,7 +33,7 @@ li a {
     text-decoration: none;
 }
 
-/* Change the link color to #111 (black) on hover */
+/* Change the link color to spotify green on hover */
 li a:hover {
-    background-color: #111;
+    background-color: #1ED760;
 }

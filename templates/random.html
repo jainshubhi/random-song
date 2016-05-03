@@ -1,19 +1,8 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <link href='{{ url_for("static", filename="css/style.css") }}' rel='stylesheet' type='text/css'>
-    <title>Spotify Songs</title>
-  </head>
-  <body>
-    <iframe src="https://embed.spotify.com/?uri={{ song.uri }}&view=coverart" width="300px" height="380px" frameborder="0" allowtransparency="true"></iframe>
-
-    <!-- Here's a random song for you! {{ song.name }} by {{ song.artist }}. <br>
-
-    <button class="btn btn-green entity-cta js-action-button" data-track-type="button-header"><span class="js-action-label"><a href="{{ song.uri }}">Play on Spotify</a></span></button>
-
-    And, here's an image of the album cover. <br>
-
-    <img src="{{ song.image }}"> -->
-  </body>
-</html>
+{% extends "header.html" %}
+{% block head %}
+  <script src="https://cdn.jsdelivr.net/react/0.14.0-rc1/react.js"></script>
+  <script src="https://cdn.jsdelivr.net/react/0.14.0-rc1/react-dom.js"></script>
+{% endblock %}
+{% block content %}
+  <iframe src="https://embed.spotify.com/?uri={{ song.uri }}&view=coverart" width="300px" height="380px" frameborder="0" allowtransparency="true" align="right"></iframe>
+{% endblock %}
